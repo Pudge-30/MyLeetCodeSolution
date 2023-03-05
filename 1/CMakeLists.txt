@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.20 FATAL_ERROR)
  set(CMAKE_CXX_EXTENSIONS OFF)
  
 # Modified the problem index eachtime.
-project(LeetCodeProblem_8)
+project(LeetCodeProblem_1)
 
 # Set user sources.
 # Put all the xxx.cpp files in SRC

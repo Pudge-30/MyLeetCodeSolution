@@ -3,13 +3,16 @@
 
 int main()
 {
-	string x = "   -123 word";
+	std::vector<int> input{3,2,4};
+	int target = 6;
 
 	Solution solution;
 
-	int y = solution.myAtoi(x);
-	std::cout << y << std::endl;
-	
+	std::vector resuilt = solution.twoSum(input,target);
+	for (auto number :resuilt)
+	{
+		std::cout << number << " ";
+	}
 
 	return 0;
 }
