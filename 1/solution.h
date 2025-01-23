@@ -2,27 +2,25 @@
 
 #include <string>
 #include <vector>
+#include <unordered_map>
 using std::string;
 using std::vector;
 
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        int index = 0;
-        while (nums.size() != 0)
+        std::unordered_map <int,int> nums_map;
+        nums_map.clear();
+        std::unordered_map<int, int>::iterator iter;
+        for (int i = 0; i < nums.size(); i++)
         {
-            int current_num = nums.front();
-            for (int i =1; i< nums.size(); i++)
+            iter = nums_map.find(target - nums[i]);
+            if (iter != nums_map.end())
             {
-                if (current_num + nums.at(i) == target)
-                {
-                    std::vector<int> output = {index, index + i};
-                    return output;
-                }
-            }
-            nums.erase(nums.begin());
-            index++;
+                return{iter->second, i};
+            };
+            nums_map.insert(std::pair<int,int>(nums[i], i));
         }
-        return std::vector<int>();
+        return {0,0};
     }
 };
